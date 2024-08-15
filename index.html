@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Online Voting System</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+        <link rel="stylesheet" href="styles.css">
+    </head>
+    <body>
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <nav class="navbar navbar-dark">
+                <button class="btn btn-light" onclick="toggleSidebar()">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </nav>
+            <ul class="nav flex-column">
+                <li class="nav-item">
+                    <a class="nav-link active" href="#" onclick="showSection('home')">
+                        <i class="fas fa-home"></i><span>Home</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" onclick="showSection('register')">
+                        <i class="fas fa-user-plus"></i><span>Register</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" onclick="showSection('login')">
+                        <i class="fas fa-sign-in-alt"></i><span>Login</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" onclick="showSection('voting')">
+                        <i class="fas fa-vote-yea"></i><span>Vote</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" onclick="showSection('result')">
+                        <i class="fas fa-chart-bar"></i><span>Results</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" onclick="showSection('contact')">
+                        <i class="fas fa-envelope"></i><span>Contact</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+        <!-- Content -->
+        <div class="content">
+            <!-- Home Page -->
+            <div id="home">
+                <div class="boxed">
+                    <h1 class="text-center mb-4">Welcome to the Online Voting System</h1>
+
+                    <!-- Carousel -->
+                    <div id="homeCarousel" class="carousel slide" data-ride="carousel">
+                        <ol class="carousel-indicators">
+                            <li data-target="#homeCarousel" data-slide-to="0" class="active"></li>
+                            <li data-target="#homeCarousel" data-slide-to="1"></li>
+                            <li data-target="#homeCarousel" data-slide-to="2"></li>
+                        </ol>
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <div class="d-flex justify-content-center align-items-center" style="height: 300px;">
+                                    <img src="https://www.thestatesman.com/wp-content/uploads/2019/10/file.jpg" alt="First slide" style="width: 500px; height: 300px; object-fit: cover;">
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <div class="d-flex justify-content-center align-items-center" style="height: 300px;">
+                                    <img src="https://www.pngmart.com/files/3/Vote-PNG-HD.png" alt="Second slide" style="width:500px; height: 300px; object-fit: cover;">
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <div class="d-flex justify-content-center align-items-center" style="height: 300px;">
+                                    <img src="https://timesofindia.indiatimes.com/photo/msid-68525897,imgsize-413878.cms" alt="Third slide" style="width: 300px; height: 300px; object-fit: cover;">
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <div class="d-flex justify-content-center align-items-center" style="height: 300px;">
+                                    <img src="https://cdn-icons-png.flaticon.com/512/1533/1533890.png" alt="fourth slide" style="width: 300px; height: 300px; object-fit: cover;">
+                                </div>
+                            </div>
+                        </div>
+
+                        <a class="carousel-control-prev" href="#homeCarousel" role="button" data-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Previous</span>
+                        </a>
+                        <a class="carousel-control-next" href="#homeCarousel" role="button" data-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Next</span>
+                        </a>
+                    </div>
+
+                    <!-- Features Section -->
+                    <div class="features mt-4">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="card text-center">
+                                    <div class="card-body">
+                                        <i class="fas fa-shield-alt fa-3x mb-3"></i>
+                                        <h5 class="card-title">Secure</h5>
+                                        <p class="card-text">Our system ensures the highest level of security for your votes.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="card text-center">
+                                    <div class="card-body">
+                                        <i class="fas fa-user-friends fa-3x mb-3"></i>
+                                        <h5 class="card-title">User-Friendly</h5>
+                                        <p class="card-text">Easy to use interface that simplifies the voting process.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="card text-center">
+                                    <div class="card-body">
+                                        <i class="fas fa-calendar-check fa-3x mb-3"></i>
+                                        <h5 class="card-title">Accessible</h5>
+                                        <p class="card-text">Vote anytime, anywhere with our online platform.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- News Section -->
+                    <div class="news mt-4">
+                        <h3 class="text-center mb-4">Latest News</h3>
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="boxed">
+                                    <h4>Upcoming Elections</h4>
+                                    <p>Stay informed about upcoming elections and important dates.</p>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="boxed">
+                                    <h4>New Features</h4>
+                                    <p>Check out the latest updates and features added to the voting system.</p>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="boxed">
+                                    <h4>Security Enhancements</h4>
+                                    <p>Learn about the latest security measures to protect your vote.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Register Page -->
+            <div id="register" style="display: none;">
+                <div class="boxed">
+                    <h2 class="text-center">Register</h2>
+                    <form id="registerForm">
+                        <div class="form-group">
+                            <label for="registerName">Full Name</label>
+                            <input type="text" id="registerName" class="form-control custom-input" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="registerVoterId">Voter ID</label>
+                            <input type="text" id="registerVoterId" class="form-control custom-input" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="registerEmail">Email</label>
+                            <input type="email" id="registerEmail" class="form-control custom-input" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="registerPassword">Password</label>
+                            <input type="password" id="registerPassword" class="form-control custom-input" required>
+                        </div>
+                        <button type="submit" class="btn custom-btn">Register</button>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Login Page -->
+            <div id="login" style="display: none;">
+                <div class="boxed">
+                    <h2 class="text-center">Login</h2>
+                    <form id="loginForm">
+                        <div class="form-group">
+                            <label for="loginVoterId">Voter ID</label>
+                            <input type="text" id="loginVoterId" class="form-control custom-input" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="loginPassword">Password</label>
+                            <input type="password" id="loginPassword" class="form-control custom-input" required>
+                        </div>
+                        <button type="submit" class="btn custom-btn">Login</button>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Voting Page -->
+            <div id="voting" style="display: none;">
+                <div class="boxed">
+                    <h2 class="text-center">Vote</h2>
+                    <div id="voteStatus" class="alert alert-info" style="display: none;"></div>
+                    <form id="votingForm">
+                        <div class="form-group">
+                            <label for="candidate">Select Candidate</label>
+                            <select id="candidate" class="form-control custom-input" required>
+                                <option value="CONGRESS WON">Congress Party</option>
+                                <option value="BJP WON">Bharatiya Janata Party (BJP)</option>
+                                <option value="CPI WON">Communist Parties (CPI, CPI(M))</option>
+                            </select>
+                        </div>
+                        <button type="submit" class="btn custom-btn">Submit Vote</button>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Results Page -->
+            <div id="result" style="display: none;">
+                <div class="boxed">
+                    <h2 class="text-center">Results</h2>
+                    <canvas id="resultsChart"></canvas>
+                </div>
+            </div>
+
+            <!-- Contact Page -->
+            <div id="contact" style="display: none;">
+                <div class="boxed">
+                    <h2 class="text-center">Contact Us</h2>
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <label for="contactName">Name</label>
+                            <input type="text" id="contactName" class="form-control custom-input" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="contactEmail">Email</label>
+                            <input type="email" id="contactEmail" class="form-control custom-input" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="contactMessage">Message</label>
+                            <textarea id="contactMessage" class="form-control custom-input" rows="4" required></textarea>
+                        </div>
+                        <button type="submit" class="btn custom-btn">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+            <p>&copy; 2024 Online Voting System. <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
+        </div>
+
+        <!-- Scripts -->
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/chart.js@3.7.0/dist/chart.min.js"></script>
+        <script src="script.js"></script>
+    </body>
+</html>
